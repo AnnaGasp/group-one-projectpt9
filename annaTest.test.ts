@@ -42,14 +42,14 @@ describe("PetStore test", () =>{
         let results = await petStore.getResults();
         expect(results).toContain("Your cart is empty.");
 
-        await fs.writeFile(`${__dirname}/petStoreScreenshot.png`,
+        await fs.writeFile(`${__dirname}/petStoreScreenshot2.png`,
         await petStore.driver.takeScreenshot(),"base64",
         (e) => {
             if (e) console.error(e);
             else console.log ('Removed from Cart Successful');
         });
 
-        await fs.writeFile (`${__dirname}/test.txt`, results,
+        await fs.writeFile (`${__dirname}/test2.txt`, results,
         (e) => {
             if (e) console.error(e);
             else console.log ('Removed from Cart Successful');

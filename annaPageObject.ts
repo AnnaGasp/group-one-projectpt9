@@ -2,7 +2,7 @@ import {By} from "selenium-webdriver";
 import {BasePage} from "./basePage";
 
 export class PetStore extends BasePage {
-    dogCategory: By= By.xpath('(//img[@*])[7]');
+    dogCategory: By= By.xpath('//img[@src="../images/dogs_icon.gif"]');
     dogProduct:By =By.xpath('//a[@href="/actions/Catalog.action?viewProduct=&productId=K9-CW-01"]');
     dogItem: By = By.xpath('//a[@href="/actions/Catalog.action?viewItem=&itemId=EST-26"]');
     addToCartButton: By = By.xpath('//a[@class="Button"]');
