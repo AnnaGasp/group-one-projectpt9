@@ -1,0 +1,4 @@
+Shopping Cart
+Item ID Product ID Description In Stock? Quantity List Price Total Cost  
+Your cart is empty.
+Sub Total: $0.00  

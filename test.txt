@@ -1,4 +1,5 @@
 Shopping Cart
 Item ID Product ID Description In Stock? Quantity List Price Total Cost  
-Your cart is empty.
-Sub Total: $0.00  
+EST-26 K9-CW-01 Adult Male Chihuahua false $125.50 $125.50 Remove
+Sub Total: $125.50  
+Proceed to Checkout
