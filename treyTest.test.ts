@@ -1,3 +1,4 @@
+import { Driver } from 'selenium-webdriver/chrome';
 import{PetStore} from './treyPageObject';
 const petstore = new PetStore();
 const fs = require('fs');
@@ -37,9 +38,9 @@ describe("Check out", () => {
         await petstore.click(petstore.UserPassword);
         await petstore.sendKeys(petstore.UserPassword,"admin2");
         await petstore.click(petstore.SignIn);
-        let results = await petstore.getResults();
-        expect (results).toContain("Invalid username or password. Signon failed.")
-        await petstore.quit()
+        let results = await petstore.getResults2();
+        expect (results).toContain("Invalid username or password. Signon failed.");
+        
         })
 });
 

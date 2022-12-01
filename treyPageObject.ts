@@ -29,4 +29,9 @@ export class PetStore extends BasePage{
         return await this.getText(this.PriceField);
     }
 
-}   
+    async getResults2() {
+        return await this.getText(this.ErrorSignIn);
+    }
+    }
+
+   
