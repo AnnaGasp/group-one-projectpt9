@@ -1,4 +1,3 @@
-import { Driver } from "selenium-webdriver/chrome";
 import {MorganPO} from "./morganPageObject";
 
 const fs= require('fs')
