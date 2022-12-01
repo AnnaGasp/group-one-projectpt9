@@ -35,4 +35,7 @@ async sendKeys(elementBy: By, keys){
     await this.driver.wait(until.elementLocated(elementBy));
     return this.driver.findElement(elementBy).sendKeys(keys)
 }
+async getResults() {
+    return await this.getText(this.saveAccountInfo);
+}
 }
