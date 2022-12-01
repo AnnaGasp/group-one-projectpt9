@@ -1,7 +1,7 @@
 import {By, until} from 'selenium-webdriver'
 import {BasePage} from './basePage'
 
-export class JPetStoreDemo extends BasePage {
+export class BreePO extends BasePage {
     registerNowBtn: By = By.xpath('//*[@id="Catalog"]/a');
     userID: By = By.css('[name="username"]');
     newPassword: By = By.css ('[name="password"]');
