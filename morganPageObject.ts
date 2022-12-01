@@ -13,7 +13,7 @@ export class MorganPO extends BasePage {
     proceedToCheckout: By = By.xpath('//*[@id="Cart"]/a');
     signInBtn: By = By.xpath('//*[@id="MenuContent"]/a[2]');
     registerNowBtn: By = By.xpath('//*[@id="Catalog"]/a')
-    userID_field: By = By.xpath('//*[@id="stripes--164048082"]')
+    userID_field: By = By.xpath('//*[@name="username"]')
     newPass_field: By = By.xpath('//*[@id="Catalog"]/form/table[1]/tbody/tr[2]/td[2]/input')
     repeatPass_field: By = By.xpath('//*[@id="Catalog"]/form/table[1]/tbody/tr[3]/td[2]/input')
     firstName_field: By = By.xpath('//*[@id="Catalog"]/form/table[2]/tbody/tr[1]/td[2]/input')
@@ -31,5 +31,8 @@ export class MorganPO extends BasePage {
 constructor(){
     super({url: "https://petstore.octoperf.com/actions/Catalog.action"})
 }
-
+async sendKeys(elementBy: By, keys){
+    await this.driver.wait(until.elementLocated(elementBy));
+    return this.driver.findElement(elementBy).sendKeys(keys)
+}
 }
