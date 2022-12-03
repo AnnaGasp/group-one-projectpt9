@@ -15,40 +15,24 @@ export class BreePO extends BasePage {
     city: By = By.css ('[name="account.city"]');
     state: By = By.css ('[name="account.state"]');
     zip: By = By.css ('[name="account.zip"]');
-    country: = By.css ('[name="account.country"]');
+    country: By = By.css ('[name="account.country"]');
     saveAccountInfo: By = By.xpath('//*[@id="Catalog"]/form/input');
     signInBtn: By = By.xpath('//*[@id="MenuContent"]/a[2]');
     username: By = By.css ('name=["username"]');
     password: By = By.css ('name=["password"]');
+    loginButton: By = By.css ('name=["signon"]');
 
 
     constructor(){
         super({url:"https://petstore.octoperf.com/actions/Account.action?newAccountForm="})
     }
 
-  
-    async navigate() {
-        await this.driver.get(this.url)
-        await this.driver.wait(until.elementLocated(this.header))
-    }
-    async click(elementBy: By) {
-        await this.driver.wait(until.elementLocated(elementBy))
-        return (await this.driver.findElement(elementBy)).click()
-    }
-    async sendKeys(elementBy: By, keys) {
-        await this.driver.wait(until.elementLocated(elementBy))
+    async sendKeys(elementBy: By, keys){
+        await this.driver.wait(until.elementLocated(elementBy));
         return this.driver.findElement(elementBy).sendKeys(keys)
     }
-    async getText(elementBy) {
-        await this.driver.wait(until.elementLocated(elementBy))
-        return this.driver.findElement(elementBy).getText()
-    }
- 
-    async setInput(elementBy: By, keys: any): Promise<void> {
-        let input = await this.driver.findElement(elementBy)
-        await input.click()
-        await input.clear()
-        return input.sendKeys(keys)
+    async getResults() {
+        return await this.getText(this.saveAccountInfo);
     }
 
 }
