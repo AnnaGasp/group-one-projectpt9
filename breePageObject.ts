@@ -18,9 +18,10 @@ export class BreePO extends BasePage {
     country: By = By.css ('[name="account.country"]');
     saveAccountInfo: By = By.xpath('//*[@id="Catalog"]/form/input');
     signInBtn: By = By.xpath('//*[@id="MenuContent"]/a[2]');
-    username: By = By.css ('name=["username"]');
     password: By = By.css ('name=["password"]');
-    loginButton: By = By.css ('name=["signon"]');
+    LogIn: By = By.css ('[name="signon"]');
+    
+ 
 
 
     constructor(){

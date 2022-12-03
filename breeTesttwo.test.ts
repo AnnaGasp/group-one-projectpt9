@@ -1,21 +1,21 @@
 import { Browser } from "selenium-webdriver";
 import {BreePO} from "./breePageObject"; 
-const breeTestone = new BreePO
+const breeTesttwo = new BreePO
 const fs = require('fs');
 
 
 beforeEach(async () =>{
-    await breeTestone.navigate();
+    await breeTesttwo.navigate();
 });
 
 afterAll(async() =>{
-    await breeTestone.driver.quit();
+    await breeTesttwo.driver.quit();
 });
 
-test( "Verifying Registration", async ()=>{
-    await breeTestone.click(breeTestone.signInBtn);
-    await breeTestone.setInput(breeTestone.username, "admin1");
-    await breeTestone.setInput(breeTestone.password, "admin2");
-    await breeTestone.click(breeTestone.loginButton);
-
+test( "Testing Sign-On Feature", async ()=>{
+    await breeTesttwo.click(breeTesttwo.signInBtn);
+    await breeTesttwo.click(breeTesttwo.LogIn);
+    await breeTesttwo.setInput(breeTesttwo.userID, "admin1");
+    await breeTesttwo.setInput(breeTesttwo.newPassword, "admin2");
+    await breeTesttwo.click(breeTesttwo.LogIn);
 })  
