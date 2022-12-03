@@ -1,4 +1,3 @@
-import { Driver } from 'selenium-webdriver/chrome';
 import{PetStore} from './treyPageObject';
 const petstore = new PetStore();
 const fs = require('fs');
@@ -18,10 +17,18 @@ describe("Pet Store Cart", () => {
         await petstore.click(petstore.AngelFish);
         await petstore.click(petstore.AddToCartLaf);
         await petstore.click(petstore.QuantityField1);
-        await petstore.sendKeys(petstore.QuantityField1,"3");
+        await petstore.setInput(petstore.QuantityField1,"3");
         await petstore.click(petstore.UpdateCart);
         let results = await petstore.getResults();
-        expect (results).toContain("Sub Total: $214.50")
+        expect (results).toContain("Sub Total: $49.50");
+
+        await fs.writeFile(`${__dirname}/CartScreenshot.png`,
+        await petstore.driver.takeScreenshot(),"base64",
+        (e) => {
+            if (e) console.error(e);
+            else console.log ('Updated cart successful');
+        });
+
         })
 });
 

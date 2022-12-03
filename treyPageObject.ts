@@ -2,9 +2,7 @@ import {By, until} from 'selenium-webdriver';
 import {BasePage} from './basePage';
 
 export class PetStore extends BasePage{
-    quit() {
-        throw new Error('Method not implemented.');
-    }
+
     FishTab : By = By.xpath('(//img[@*])[5]');
     AngelFish : By = By.xpath('//*[@id="Catalog"]/table/tbody/tr[2]/td[1]/a');
     AddToCartLaf : By = By.xpath ('(//a[@class="Button"])[1]');
@@ -22,7 +20,7 @@ export class PetStore extends BasePage{
     }
     async sendKeys(elementBy: By, keys) {
         await this.driver.wait(until.elementLocated(elementBy))
-        return this.driver.findElement(elementBy).sendKeys(keys);
+        return this.driver.findElement(elementBy).sendKeys(keys)
     }
 
     async getResults() {
